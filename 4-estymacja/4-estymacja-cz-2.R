@@ -77,6 +77,7 @@ chi = sigma.test(diamenty, conf.level = 0.95)
 chi
 
 ci = chi$conf.int
+ci
 l = sqrt(ci[[1]])
 l
 # 0.0393211

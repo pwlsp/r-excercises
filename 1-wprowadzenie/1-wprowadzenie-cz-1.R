@@ -19,6 +19,7 @@ exp(3)
 
 #Zadanie2
 vector = seq(1,10,1)
+vector
 sum(vector)
 
 #Zadanie3
@@ -27,6 +28,7 @@ length(x)
 y=rev(x) #odwracanie wektora / inny sposób -> y=seq(20,2,-2)
 x*x
 x^2
+x
 sqrt(sum(x^2)) #odległość euklidesowa
 t(x)%*%y #wynikiem jest liczba
 x%*%t(y) #wynikiem jest macierz
@@ -89,3 +91,6 @@ plot(cbind(x,y))
 #Zadanie9
 y=function(x){x^2+3*x+5}
 curve(y,-3,4) #wykresy funkcji zmiennych losowych typu ciągłego
+
+y=function(x){0.01^x}
+curve(y, 0, 0.8)

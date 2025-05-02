@@ -1,5 +1,5 @@
 ########################################################################################################
-dane = read.csv("/home/pwlsp/room/put/statystyka/4-estymacja/dane_est.csv",sep=";",dec=",")
+dane = read.csv("/home/pwlsp/room/put/statystyka/statystyka-repo/4-estymacja/dane_est.csv",sep=";",dec=",")
 
 diamenty = na.omit(dane$diamenty)
 

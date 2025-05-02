@@ -5,7 +5,7 @@
 
 #(a)
 
-#S ma rozkład dwumianiwy
+#S ma rozkład dwumianowy
 n = 5
 p = 0.3
 x = 0:5
@@ -93,6 +93,7 @@ pexp(500,lambda)
 EX = 2.4
 lambda = 1/EX
 curve(dexp(x,lambda),0,15)
+
 
 #P(X>3) = 1- P(X<=3) = 1 - F(3) = 0.2865048
 1 - pexp(3,lambda)
