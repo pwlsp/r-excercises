@@ -4,7 +4,7 @@ library(arm)
 
 
 #oceny=read.csv("C:/Users/student/Desktop/piotrszyszka/oceny.csv",sep=";",dec=",")
-oceny=read.csv("/home/pwlsp/room/put/statystyka/statystyka-repo/2-statystyka-opisowa/oceny.csv",sep=";",dec=",")
+oceny=read.csv("oceny.csv",sep=";",dec=",")
 class(oceny)
 
 grupy=names(oceny)
@@ -33,7 +33,7 @@ for (i in 1:4){
 } # count (liczebnosc)
 
 for (i in 1:4){
-  title = paste("histogram liczebności", grupy[i])
+  title = paste("histogram częstości", grupy[i])
   discrete.histogram(na.omit(oceny[,i]),freq=FALSE, main=grupy[i], xlab="oceny")
 } # probability
 

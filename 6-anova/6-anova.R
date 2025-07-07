@@ -1,14 +1,16 @@
-chomiki = read.csv("/home/pwlsp/room/put/statystyka/statystyka-repo/6-hipotezy-cd/Anova_chomiki.csv",sep=";",dec=",")
-cisnienie = read.csv("/home/pwlsp/room/put/statystyka/statystyka-repo/6-hipotezy-cd/Anova_cisnienie.csv",sep=";",dec=",")
+chomiki = read.csv("Anova_chomiki.csv",sep=";",dec=",")
+cisnienie = read.csv("Anova_cisnienie.csv",sep=";",dec=",")
 
 cisnienie
 
 metoda = rep(names(cisnienie), each=length(cisnienie$Niskie))
-wyniki = c(cisnienie$Niskie, cisnienie$Srednie, cisnienie$Silne, cisnienie$BardzoSilne)
 metoda
+wyniki = c(cisnienie$Niskie, cisnienie$Srednie, cisnienie$Silne, cisnienie$BardzoSilne)
 wyniki
 cisnienieTest = data.frame(wyniki, metoda)
 cisnienieTest
+
+split(cisnienieTest$wyniki, cisnienieTest$metoda)
 
 srednie = sapply(split(cisnienieTest$wyniki, cisnienieTest$metoda), mean)
 srednie
@@ -67,15 +69,28 @@ metoda
 wyniki
 
 # zad 4
-sportowcy = read.csv("/home/pwlsp/room/put/statystyka/statystyka-repo/6-hipotezy-cd/Anova_sportowcy.csv",sep=";",dec=",")
+sportowcy = read.csv("Anova_sportowcy.csv",sep=";",dec=",")
 
 metoda = rep(names(sportowcy),
              each = length(sportowcy$Niepalacy))
+
+metoda
 
 wyniki = c(sportowcy$Niepalacy, sportowcy$Lekkopalacy, sportowcy$Sredniopalacy, sportowcy$Duzopalacy)
 wyniki
 
 sportowcyTest = data.frame(wyniki, metoda)
+sportowcyTest
+
+# test jednorodności wariancji
+# H0: wariancje są takie same
+# H1: ~H0
+
+bartlett.test(wyniki~metoda,sportowcyTest)
+# p-value = 0,8517 > 0,01 = alpha -> brak podstaw do odrzucenia H0
+
+# Interpetacja: Na poziomie istotności 0,01 dane potwierdzają jednorodność wariancji.
+# Wniosek: Może zostać przeprowadzona ANOVA.
 
 #H0 sig^2_1 = sig^2_2 = sig^2_3 = sig^2_4 
 #H1: ~H0

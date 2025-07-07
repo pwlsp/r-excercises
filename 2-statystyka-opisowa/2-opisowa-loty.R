@@ -1,4 +1,5 @@
-loty=read.csv("C:/Users/student/Desktop/piotrszyszka/loty.csv",sep=";")
+loty=read.csv("loty.csv",sep=";")
+loty
 class(oloty)
 
 rok1959 = loty$X1959 #data.frame

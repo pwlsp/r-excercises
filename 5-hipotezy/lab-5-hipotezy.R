@@ -1,6 +1,6 @@
 # hipoteza z równością zawsze ma być w H0, nie w H1
 
-dane = read.csv("/home/pwlsp/room/put/statystyka/statystyka-repo/5-hipotezy/dane_hip.csv",sep=";",dec=",")
+dane = read.csv("dane_hip.csv",sep=";",dec=",")
 dane
 
 ############### zadanie 1 ############### 
